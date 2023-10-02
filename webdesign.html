@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Weather Buddy!</title>
+        <style>
+            body{
+                /* strong opponent colors */
+                background-color: yellow;
+                color: blue;
+            }
+            /* warning message that is very small, does not have peripheral pop */
+            .warning{
+                position: absolute;
+                top:10px;
+                right:10px;
+                font-size:10px;
+                color:green;
+            }
+            /* conflicting message about going out or not*/
+            .conflicting-message {
+                position: absolute;
+                top: 30px; 
+                right: 10px;
+                font-size: 12px; 
+                color: blue; 
+            }
+            /* presenting long information in an ambiguous way instead of in a terse way */
+            .longtext{
+                text-align: center;
+                margin-top: 50px;
+                font-size: 18px;
+                line-height: 1.5;
+            }
+            /* not enhancing user's ability to scan long numbers */
+            .minutes-since-2023 {
+                position: absolute;
+                bottom: 10px;
+                left: 10px; 
+                font-size: 48px; 
+                color: black; 
+            }
+            /* adding too many calls to action, contrasting colors, very close to each other*/
+            .cta-button {
+                position: absolute;
+                left: 10px; 
+                font-size: 18px;
+                background-color: red;
+                color: lime;
+                border: none;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+                box-shadow: 0 0 0 5px yellow;
+            }
+    
+            
+            .cta-button + .cta-button {
+                margin-top: 1px;
+            }
+        </style>
+      </head>
+      <body>
+        <h1>WeatherBuddy</h1>
+        <div class="warning">⚠️ Don't go outside! There is a flood!! </div>
+        <div class="conflicting-message">Go get your trash cans!! Now!!</div>
+        <div class="longtext">
+            <p>
+                Today's weather forecast is a complex amalgamation of meteorological phenomena that defy conventional explanation. As the sun rises, it casts its radiant glow upon the atmosphere, setting into motion a chain of events that culminate in a climatic symphony of epic proportions. The winds whisper secrets to the clouds, while the barometric pressure plays a cosmic game of hide-and-seek with the mercury levels.
+            </p>
+            <p>
+                Anticipate the enigmatic dance of precipitation, as it manifests itself in myriad forms, ranging from gentle drizzles reminiscent of the tears of a nostalgic poet to the thunderous downpour that resonates with the very heartbeat of Mother Nature. Atmospheric anomalies shall weave a tapestry of ambiguity, challenging the very essence of meteorological comprehension.
+            </p>
+            <p>
+                In conclusion, brace yourself for a day of meteorological marvels that transcend the boundaries of human understanding. The forecast? A conundrum wrapped in a meteorological enigma, shrouded in the mysteries of the heavens. Prepare for the unpredictable, for today's weather defies conventional wisdom and embarks on a journey into the realm of bewildering weather wonders.
+            </p>
+        </div>
+        <script>
+            var now = new Date();
+            var timestamp2023 = new Date("2023-01-01T00:00:00Z");
+            var minutesSince2023 = Math.floor((now - timestamp2023) / (1000 * 60));
+    
+            var minutesSince2023Element = document.createElement("div");
+            minutesSince2023Element.className = "minutes-since-2023";
+            minutesSince2023Element.textContent = "Minutes since 2023: " + minutesSince2023;
+            document.body.appendChild(minutesSince2023Element);
+        </script>
+        <a class="cta-button" href="https://www.redcrossblood.org/" target="_blank">Donate Blood!</span></a>
+        <a class="cta-button" href="https://freerice.com/home" target="_blank">Donate Rice for free!</span></a>
+        <a class="cta-button" href="https://www.housinghope.org/?gad=1&gclid=Cj0KCQjw1OmoBhDXARIsAAAYGSGggenxWiOuicn1Veehe-8KxVCkuvK-sqhgHbB12xl-dSqpJQU2KlMaAhHhEALw_wcB" target="_blank">Help the Homeless!</span></a>
+      </body>
+</html>
