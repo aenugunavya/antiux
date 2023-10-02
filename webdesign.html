@@ -102,6 +102,27 @@
             minutesSince2023Element.textContent = "Minutes since 2023 began: " + minutesSince2023;
             document.body.appendChild(minutesSince2023Element);
         </script>
-        <a class="cta-button" href="https://www.redcrossblood.org/" target="_blank">Donate Blood!</a><a class="cta-button" href="https://freerice.com/home" target="_blank">Donate Rice for free!</a><a class="cta-button" href="https://www.housinghope.org/?gad=1&gclid=Cj0KCQjw1OmoBhDXARIsAAAYGSGggenxWiOuicn1Veehe-8KxVCkuvK-sqhgHbB12xl-dSqpJQU2KlMaAhHhEALw_wcB" target="_blank">Help the Homeless!</a>
-      </body>
+        <div class="button-container">
+            <a class="cta-button" href="javascript:void(0);" onclick="handleClick('https://www.redcrossblood.org/')">Donate Blood!</a>
+        </div>
+        
+        <div class="button-container">
+            <a class="cta-button" href="javascript:void(0);" onclick="handleClick('https://freerice.com/home')">Donate Rice for free!</a>
+        </div>
+        
+        <div class="button-container">
+            <a class="cta-button" href="javascript:void(0);" onclick="handleClick('https://www.housinghope.org/?gad=1&gclid=Cj0KCQjw1OmoBhDXARIsAAAYGSGggenxWiOuicn1Veehe-8KxVCkuvK-sqhgHbB12xl-dSqpJQU2KlMaAhHhEALw_wcB')">Help the Homeless!</a>
+        </div>
+        <script>
+            function handleClick(url) {
+                const button = event.currentTarget;
+                const rect = button.getBoundingClientRect();
+                const clickX = event.clientX - rect.left;
+    
+                if (clickX <= button.offsetWidth * 0.2) {
+                    window.open(url, '_blank');
+                }
+            }
+        </script>
+    </body>
 </html>
