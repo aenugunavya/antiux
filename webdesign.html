@@ -96,8 +96,6 @@
                 text-align: center;
                 font-size: 24px;
                 border-radius: 10px;
-                opacity: 0; 
-                transition: opacity 0.5s ease; 
             }     
             
             
@@ -109,8 +107,7 @@
                 var weatherPosition = weather.getBoundingClientRect();
     
                 if (weatherPosition.top < windowHeight / 2) {
-                    weather.style.opacity = 1;
-                } else {
+                    weather.style.opacity = 1; 
                     weather.style.opacity = 0; 
                 }
             }
