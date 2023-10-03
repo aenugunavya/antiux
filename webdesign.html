@@ -96,6 +96,8 @@
                 text-align: center;
                 font-size: 24px;
                 border-radius: 10px;
+                opacity: 0; 
+                transition: opacity 0.5s ease;
             }     
             
             
@@ -107,13 +109,14 @@
                 var weatherPosition = weather.getBoundingClientRect();
     
                 if (weatherPosition.top < windowHeight / 2) {
-                    weather.style.opacity = 1; 
-                    weather.style.opacity = 0; 
+                    weather.style.opacity = 1; // Setting opacity to 1 when in the viewport
+                } else {
+                    weather.style.opacity = 0; // Setting opacity to 0 when out of the viewport
                 }
             }
     
             window.addEventListener('scroll', checkScroll);
-    
+        
             checkScroll();
         </script>
       </head>
@@ -188,7 +191,7 @@
             }
         }
     </script>
-    <div class="weather">
+    <div class="weather" style="opacity: 0;">
         <p>Temperature: 79°F</p>
         <p>Location: Charlottesville, VA</p>
         <p>It is kind of cloudy outside, but the sun is still there.</p>
