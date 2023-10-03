@@ -96,10 +96,29 @@
                 text-align: center;
                 font-size: 24px;
                 border-radius: 10px;
-            }            
+                opacity: 0; 
+                transition: opacity 0.5s ease; 
+            }     
             
             
         </style>
+        <script>
+            function checkScroll() {
+                var weather = document.querySelector('.weather');
+                var windowHeight = window.innerHeight;
+                var weatherPosition = weather.getBoundingClientRect();
+    
+                if (weatherPosition.top < windowHeight / 2) {
+                    weather.style.opacity = 1;
+                } else {
+                    weather.style.opacity = 0; 
+                }
+            }
+    
+            window.addEventListener('scroll', checkScroll);
+    
+            checkScroll();
+        </script>
       </head>
       <body>
         <h1 style="font-family: 'Papyrus', cursive;">Welcome to Weather Buddy!</h1>
@@ -147,8 +166,7 @@
             <p>Temperature: 79°F</p>
             <p>Location: Charlottesville, VA</p>
             <p>It is kind of cloudy outside, but the sun is still there.</p>
-        </div>        
-    
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script>
         function handleClick(url, buttonNumber) {
@@ -173,5 +191,10 @@
             }
         }
     </script>
+    <div class="weather">
+        <p>Temperature: 79°F</p>
+        <p>Location: Charlottesville, VA</p>
+        <p>It is kind of cloudy outside, but the sun is still there.</p>
+    </div>       
     </body>
 </html>
