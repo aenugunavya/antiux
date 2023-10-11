@@ -115,6 +115,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 text-align: center; 
+                display: none; 
               }
           
               .weather-result img {
@@ -207,6 +208,7 @@
               document.getElementById('weather-image').src = 'cloud.webp';
               document.getElementById('temp-text').innerText = '40 degrees today';
             }
+            document.querySelector('.weather-result').style.display = 'block';
           
           }
     </script>
