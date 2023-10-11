@@ -207,9 +207,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script>
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) { 
-              document.querySelector('.scroll-feature').style.display = 'block';
+
+            var scrollPos = window.scrollY;
+          
+            if(scrollPos > 100) {
+              document.querySelector('.scroll-feature').style.display = 'block'; 
+            } else {
+              document.querySelector('.scroll-feature').style.display = 'none';
             }
+          
           });
     </script>
 
