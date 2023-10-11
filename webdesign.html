@@ -112,23 +112,7 @@
             
             
         </style>
-        <script>
-            function checkScroll() {
-                var weather = document.querySelector('.weather');
-                var windowHeight = window.innerHeight;
-                var weatherPosition = weather.getBoundingClientRect();
-            
-                if (weatherPosition.top < windowHeight / 2) {
-                    document.querySelector('.scroll-feature').style.display = 'block';
-                } else {
-                    document.querySelector('.scroll-feature').style.display = 'none';
-                }
-            }
-            
-            window.addEventListener('scroll', checkScroll);
-            checkScroll();
-            
-        </script>
+    
       </head>
       <body>
         <h1 style="font-family: 'Papyrus', cursive;">Welcome to Weather Buddy!</h1>
