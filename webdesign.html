@@ -99,6 +99,16 @@
                 opacity: 0; 
                 transition: opacity 0.5s ease;
             }     
+            .scroll-feature {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: white;
+                border: 2px solid red;
+                padding: 10px;
+                border-radius: 5px;
+                display: none;
+            }
             
             
         </style>
@@ -191,10 +201,29 @@
             }
         }
     </script>
+    <div class="scroll-feature">
+        <form onsubmit="submitForm(); return false;">
+            <label for="day">Day:</label>
+            <input type="text" id="day" placeholder="Day number" required><br><br>
+            <label for="year">Year:</label>
+            <input type="text" id="year" placeholder="Year" required><br><br>
+            <label for="month">Month:</label>
+            <input type="text" id="month" placeholder="Month" required><br><br>
+            <input type="submit" value="Submit" style="background-color: red; color: white;">
+        </form>
+    </div>
+
+    <div class="button-container">
+        <a class="cta-button" href="javascript:void(0);" onclick="handleClick('https://www.redcrossblood.org/', 1)">Donate Blood!</a>
+        <i class="fas fa-check" id="checkmark1"></i>
+        <i class="fas fa-times" id="x1"></i>
+    </div>
     <div class="weather" style="opacity: 0;">
         <p>Temperature: 79°F</p>
         <p>Location: Charlottesville, VA</p>
         <p>It is kind of cloudy outside, but the sun is still there.</p>
     </div>       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    
     </body>
 </html>
