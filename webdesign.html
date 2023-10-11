@@ -109,6 +109,18 @@
                 border-radius: 5px;
             }
             
+            .weather-result {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center; 
+              }
+          
+              .weather-result img {
+                width: 300px;
+                height: 300px;
+              }
             
         </style>
     
@@ -184,12 +196,19 @@
             }
         }
         function submitForm() {
-            var day = document.getElementById('day').value;
-            var year = document.getElementById('year').value;
+
+            var day = document.getElementById('day').value; 
             var month = document.getElementById('month').value;
-    
-            alert("Day: " + day + ", Year: " + year + ", Month: " + month);
-        }
+          
+            if(month === 'Oct') {
+              document.getElementById('weather-image').src = 'sunny.webp'; 
+              document.getElementById('temp-text').innerText = '80 degrees today';
+            } else if(month === 'Dec') {
+              document.getElementById('weather-image').src = 'cloud.webp';
+              document.getElementById('temp-text').innerText = '40 degrees today';
+            }
+          
+          }
     </script>
     
     <div class="scroll-feature">
@@ -203,6 +222,10 @@
             <input type="submit" value="Submit" style="background-color: red; color: white;">
         </form>
     </div>
+    <div class="weather-result">
+        <img src="" id="weather-image">
+        <p id="temp-text"></p>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script>
