@@ -117,17 +117,17 @@
                 var weather = document.querySelector('.weather');
                 var windowHeight = window.innerHeight;
                 var weatherPosition = weather.getBoundingClientRect();
-    
+            
                 if (weatherPosition.top < windowHeight / 2) {
-                    weather.style.opacity = 1; // Setting opacity to 1 when in the viewport
+                    document.querySelector('.scroll-feature').style.display = 'block';
                 } else {
-                    weather.style.opacity = 0; // Setting opacity to 0 when out of the viewport
+                    document.querySelector('.scroll-feature').style.display = 'none';
                 }
             }
-    
+            
             window.addEventListener('scroll', checkScroll);
-        
             checkScroll();
+            
         </script>
       </head>
       <body>
@@ -200,7 +200,15 @@
                 }
             }
         }
+        function submitForm() {
+            var day = document.getElementById('day').value;
+            var year = document.getElementById('year').value;
+            var month = document.getElementById('month').value;
+    
+            alert("Day: " + day + ", Year: " + year + ", Month: " + month);
+        }
     </script>
+    
     <div class="scroll-feature">
         <form onsubmit="submitForm(); return false;">
             <label for="day">Day:</label>
