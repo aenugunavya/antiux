@@ -4,10 +4,30 @@
   <title>Are you qualified to be a Weather Buddy?</title>
   <style>
     body {
-      background-color: red;
-      margin: 0;
-      padding: 0;
-    }
+        background-color: red;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          to right,
+          linear-gradient(to bottom right, rgb(255, 0, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 255, 255), rgb(0, 0, 255), rgb(255, 0, 255), rgb(255, 0, 0)),
+          red
+        );
+        background-size: 50% 100%, 50% 100%;
+        background-position: 0 0, 100% 0;
+        animation: backgroundAnimation 20s infinite;
+      }
+    
+      @keyframes backgroundAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
     .form-container {
       position: relative;
