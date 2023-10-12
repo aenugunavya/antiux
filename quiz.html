@@ -4,27 +4,27 @@
   <title>Are you qualified to be a Weather Buddy?</title>
   <style>
     body {
-        background-color: red;
-        margin: 0;
-        padding: 0;
-      }
-  
-      .form-container {
-        position: relative;
-        text-align: right;
-      }
-  
-      #submit-button {
-        background-color: orange;
-        color: orange;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-  
+      background-color: red;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      position: relative;
+      text-align: right;
+    }
+
+    #submit-button {
+      background-color: orange;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
     select#philanthropy-option {
       background-color: red;
       color: blue;
@@ -37,20 +37,18 @@
   
   <p>Take this quiz to find out if you have what it takes to become one!</p>
 
-  <form>
-    <p>Question 1: Choose one of our philanthropy options from the first page and then go to that page and navigate to that page.</p>
-    <label for="philanthropy-option">Select an option:</label>
-    <select id="philanthropy-option" name="philanthropy-option">
-      <option value="FreeRice">FreeRice</option>
-      <option value="Homeless">Homeless</option>
-      <option value="Blood">Blood</option>
-    </select>
-    <br><br>
-    
-  </form>
-  <input type="submit" value="Submit">
-</div>
-
+  <div class="form-container">
+    <form>
+      <p>Question 1: Choose one of our philanthropy options from the first page and then go to that page and navigate to that page.</p>
+      <label for="philanthropy-option">Select an option:</label>
+      <select id="philanthropy-option" name="philanthropy-option">
+        <option value="FreeRice">FreeRice</option>
+        <option value="Homeless">Homeless</option>
+        <option value="Blood">Blood</option>
+      </select>
+    </form>
+  </div>
+  <input type="submit" id="submit-button" value="Submit">
 
 </body>
 </html>
