@@ -210,20 +210,15 @@
             }
         }
         function submitForm() {
-
-            var day = document.getElementById('day').value; 
-            var month = document.getElementById('month').value;
-          
-            if(month === 'Oct') {
-              document.getElementById('weather-image').src = 'sunny.webp'; 
-              document.getElementById('temp-text').innerText = '80 degrees today';
-            } else if(month === 'Dec') {
-              document.getElementById('weather-image').src = 'cloud.webp';
-              document.getElementById('temp-text').innerText = '40 degrees today';
-            }
-            document.querySelector('.weather-result').style.display = 'block';
-          
-          }
+            const day = document.getElementById('day').value;
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('year').value;
+        
+            const date = `${month} ${day}, ${year}`;
+            const forecastPageLink = `subpage.html?date=${encodeURIComponent(date)}`;
+            
+            window.location.href = forecastPageLink;
+        }
     </script>
     
     <div class="scroll-feature">
