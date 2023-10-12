@@ -78,6 +78,14 @@
             width: 100px;
         }
 
+        #phone-number {
+            background-color: blue;
+            color: transparent;
+            border: blue;
+            width: 100px;
+        }
+
+
         .modal {
             display: none;
             position: fixed;
@@ -140,6 +148,12 @@
             <input type="text" id="trash-cans" name="trash-cans" placeholder="think twice">
             <input type="hidden" name="correct-answer-4" value="no">
             <br><br>
+
+            <p>Question 4: What is our phone number?</p>
+            <label for="phone-number"></label>
+            <input type="text" id="phone-number" name="phone-number" placeholder="try your best">
+            <input type="hidden" name="correct-answer-5" value="(123)456-7890">
+            <br><br>
             <input type="submit" id="submit-button" value="Submit">
         </form>
     </div>
@@ -160,11 +174,13 @@
             'correct-answer-2': form.elements['correct-answer-2'].value,
             'correct-answer-3': form.elements['correct-answer-3'].value,
             'correct-answer-4': form.elements['correct-answer-4'].value,
+            'correct-answer-5': form.elements['correct-answer-5'].value,
         };
         const userAnswers = {
             'correct-answer-2': form.elements['low-temperature'].value,
             'correct-answer-3': form.elements['job-offerings'].value,
             'correct-answer-4': form.elements['trash-cans'].value,
+            'correct-answer-5': form.elements['phone-number'].value,
         };
         let allCorrect = true;
 
@@ -187,7 +203,9 @@
     document.querySelector('.close-button').addEventListener('click', function () {
         document.getElementById('quiz-form').reset();
         document.getElementById('result-modal').style.display = 'none';
-    });
+    })
+    
+    ;
 </script>
 </body>
 </
