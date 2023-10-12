@@ -10,21 +10,20 @@
     <p>Today is <span id="datePlaceholder"></span>. It seems like it may thunder.</p>
     
     <script>
-        function getParameterByName(name, url) {
-          if (!url) url = window.location.href;
-          name = name.replace(/[\[\]]/g, "\\$&");
-          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-              results = regex.exec(url);
-          if (!results) return null;
-          if (!results[2]) return '';
-          return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-      
-        var date = getParameterByName('date');
-      
-        var datePlaceholder = document.getElementById('datePlaceholder');
-        datePlaceholder.textContent = date;
-      </script>
-      
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
+      var date = getParameterByName('date');
+
+      var datePlaceholder = document.getElementById('datePlaceholder');
+      datePlaceholder.textContent = date;
+    </script>
   </body>
 </html>
