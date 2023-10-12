@@ -6,6 +6,7 @@
     body {
         margin: 0;
         padding: 0;
+        background: red;
       }
 
       .animated-bg {
@@ -14,8 +15,9 @@
         left: 0;
         width: 50%;
         height: 100%;
-        background: red;
-        animation: backgroundAnimation 20s infinite; 
+        background: linear-gradient(to bottom right, 
+    #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+  animation: animateBg 20s infinite;
       }
       
       .content {
