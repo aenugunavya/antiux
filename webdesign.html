@@ -210,25 +210,26 @@
             }
         }
         function submitForm() {
+
             const day = document.getElementById('day').value;
             const month = document.getElementById('month').value;
             const year = document.getElementById('year').value;
-        
-            const date = `${month} ${day}, ${year}`;
-            const forecastPageLink = `subpage.html?date=${encodeURIComponent(date)}`;
-            
-            window.location.href = forecastPageLink;
-        }
+          
+            const queryString = '?day=' + day + '&month=' + month + '&year=' + year;
+          
+            window.location.href = "subpage.html" + queryString;
+          
+          }
     </script>
     
     <div class="scroll-feature">
         <form onsubmit="submitForm(); return false;">
             <label for="day">Day:</label>
-            <input type="text" id="enter here" placeholder="Enter today's day. Do not put alphabets, characters, or anything like that. Or else, it won't work!" required><br><br>
+            <input type="text" id="day" placeholder="Enter today's day. Only use numbers in this so it makes sense." required>
             <label for="year">Year:</label>
-            <input type="text" id="enter here" placeholder="Enter today's year. Do not put alphabets, characters, or anything like that. Or else, it won't work!" required><br><br>
+            <input type="text" id="month" placeholder="Enter today's month. Only use letters in this so it makes sense." required>
             <label for="month">Month:</label>
-            <input type="text" id="enter here" placeholder="Enter today's day. Do not put alphabets, characters, or anything like that. Or else, it won't work!" required><br><br>
+            <input type="text" id="year" placeholder="Enter today's year. Only use numbers in this so it makes sense." required>
             <input type="submit" value="Submit" style="background-color: red; color: white;">
         </form>
     </div>
