@@ -99,9 +99,9 @@
         border: none;
         width: 100px;
       }
-      .modal {
+    .modal {
         display: none;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -135,7 +135,7 @@
   <p>Take this quiz to find out if you have what it takes to become one!</p>
 
   <div class="form-container">
-    <form>
+    <form id="quiz-form">
       <p>Question 1: Choose one of our philanthropy options from the first page and then go to that page and navigate to that page.</p>
       <label for="philanthropy-option">Select an option:</label>
       <select id="philanthropy-option" name="philanthropy-option">
@@ -168,8 +168,17 @@
     
   </div>
   </div>
+  <div class="modal" id="result-modal">
+
+    <div class="modal-content">
+      <div class="message" id="result-message"></div>
+      <button class="close-button">Close</button>
+    </div>
+  
+  </div>
   <script>
-    document.getElementById('quiz-form').addEventListener('submit', function (e) {
+    document.getElementById('quiz-form').addEventListener('submit', function(e) {
+
         e.preventDefault();
         const form = e.target;
         const answers = {
@@ -191,13 +200,18 @@
             }
         }
 
-        if (allCorrect) {
+        if(allCorrect) {
             document.getElementById('result-message').textContent = "Yay! You're now a Weather Buddy";
-        } else {
-            document.getElementById('result-message').textContent = "Try again.";
-        }
+          } else {
+            document.getElementById('result-message').textContent = "Try again";  
+          }
     });
+    document.querySelector('.close-button').addEventListener('click', function() {
+        document.getElementById('quiz-form').reset();
+        document.getElementById('result-modal').style.display = 'none';
+      });
 </script>
+
 
 </body>
 </html>
