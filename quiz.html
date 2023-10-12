@@ -29,6 +29,27 @@
       background-color: red;
       color: blue;
     }
+
+    #low-temperature {
+        background-color: red;
+        color: blue;
+        border: 2px solid orange;
+        padding: 5px;
+        width: 100px;
+      }
+
+    #job-offerings {
+        background-color: black;
+        color: white;
+        width: 100px;
+    }
+
+    #trash-cans {
+        background-color: red;
+        color: blue;
+        border: 2px solid orange;
+        width: 100px;
+      }
   </style>
 </head>
 <body>
@@ -46,9 +67,26 @@
         <option value="Homeless">Homeless</option>
         <option value="Blood">Blood</option>
       </select>
+      <br><br>
+
+      <p>Question 2: Give the number for the low temperature today</p>
+      <label for="low-temperature">Enter your number here (two digits, no letters allowed):</label>
+      <input type="text" id="low-temperature" name="low-temperature" pattern="\d{2}" title="Please enter a two-digit number." required>
+      <br><br>
+
+      <p>Question 3: How many job offerings do we have?</p>
+      <label for="job-offerings">Good luck finding this; it's hard.</label>
+      <input type="text" id="job-offerings" name="job-offerings" placeholder="Good luck finding this; it's hard.">
+      <br><br>
+
+      <p>Question 4: Did you get your trash cans?</p>
+      <label for="trash-cans">think twice</label>
+      <input type="text" id="trash-cans" name="trash-cans" placeholder="think twice">
+      <br><br>
+
     </form>
+    <input type="submit" id="submit-button" value="Submit">
   </div>
-  <input type="submit" id="submit-button" value="Submit">
 
 </body>
 </html>
