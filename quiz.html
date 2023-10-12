@@ -1,184 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Are you qualified to be a Weather Buddy?</title>
-  <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: red;
-      }
-
-      .animated-bg {
-        position: absolute;
-        top: 0; 
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(to right,
-    #ff0000,
-    #ff4000, 
-    #ff8000,
-    #ffbf00, 
-    #ffff00,
-    #bfff00,
-    #80ff00,
-    #40ff00,
-    #00ff00,
-    #00ff40,
-    #00ff80, 
-    #00ffbf,
-    #00ffff,
-    #00bfff, 
-    #0080ff,
-    #0040ff,
-    #0000ff,
-    #4000ff,
-    #8000ff, 
-    #bf00ff,
-    #ff00ff
-  );
-  animation: animateBg 20s infinite;
-      }
-      
-      .content {
-        position: relative;
-        z-index: 1;
-      }
-    
-      @keyframes backgroundAnimation {
-        0% {
-          background-position: 0% 50%;
+    <title>Are you qualified to be a Weather Buddy?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: red;
         }
-        50% {
-          background-position: 100% 50%;
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, #ff0000, #ff4000, #ff8000, #ffbf00, #ffff00, #bfff00, #80ff00, #40ff00, #00ff00, #00ff40, #00ff80, #00ffbf, #00ffff, #00bfff, #0080ff, #0040ff, #0000ff, #4000ff, #8000ff, #bf00ff, #ff00ff);
+            animation: animateBg 20s infinite;
         }
-        100% {
-          background-position: 0% 50%;
+
+        .content {
+            position: relative;
+            z-index: 1;
         }
-      }
 
-    .form-container {
-      position: relative;
-      text-align: left;
-    }
+        @keyframes animateBg {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    #submit-button {
-      background-color: red;
-      color: rgb(228, 36, 18);
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
+        .form-container {
+            position: relative;
+            text-align: left;
+        }
 
-    select#philanthropy-option {
-      background-color: red;
-      color: blue;
-    }
+        #submit-button {
+            background-color: red;
+            color: rgb(228, 36, 18);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
 
-    #low-temperature {
-        background-color: transparent;
-        color: transparent;
-        border: none;
-        padding: 5px;
-        width: 100px;
-      }
+        select#philanthropy-option {
+            background-color: red;
+            color: blue;
+        }
 
-    #job-offerings {
-        background-color: black;
-        color: white;
-        width: 100px;
-    }
+        #low-temperature {
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            padding: 5px;
+            width: 100px;
+        }
 
-    #trash-cans {
-        background-color: transparent;
-        color: transparent;
-        border: none;
-        width: 100px;
-      }
-    .modal {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 0, 0.7); 
-    }
-    .modal-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-    .message {
-        background-color: yellow;
-        color: green;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+        #job-offerings {
+            background-color: black;
+            color: white;
+            width: 100px;
+        }
+
+        #trash-cans {
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            width: 100px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 0, 0.7);
+        }
+
+        .modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .message {
+            background-color: yellow;
+            color: green;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
 <div class="animated-bg"></div>
 
 <div class="content">
+    <h1>Are you qualified to be a Weather Buddy?</h1>
+    <p>Take this quiz to find out if you have what it takes to become one!</p>
 
+    <div class="form-container">
+        <form id="quiz-form">
+            <p>Question 1: Choose one of our philanthropy options from the first page and then go to that page and navigate to that page.</p>
+            <label for="philanthropy-option">Select an option:</label>
+            <select id="philanthropy-option" name="philanthropy-option">
+                <option value="FreeRice">FreeRice</option>
+                <option value="Homeless">Homeless</option>
+                <option value="Blood">Blood</option>
+            </select>
+            <br><br>
 
-  <h1>Are you qualified to be a Weather Buddy?</h1>
-  
-  <p>Take this quiz to find out if you have what it takes to become one!</p>
+            <p>Question 2: Give the number for the low temperature today</p>
+            <label for="low-temperature">Enter your number here (two digits, no letters allowed):</label>
+            <input type="text" id="low-temperature" name="low-temperature" pattern="\d{2}" title="Please enter a two-digit number." required>
+            <input type="hidden" name="correct-answer-2" value="32">
+            <br><br>
 
-  <div class="form-container">
-    <form id="quiz-form">
-      <p>Question 1: Choose one of our philanthropy options from the first page and then go to that page and navigate to that page.</p>
-      <label for="philanthropy-option">Select an option:</label>
-      <select id="philanthropy-option" name="philanthropy-option">
-        <option value="FreeRice">FreeRice</option>
-        <option value="Homeless">Homeless</option>
-        <option value="Blood">Blood</option>
-      </select>
-      <br><br>
+            <p>Question 3: How many job offerings do we have?</p>
+            <label for="job-offerings">Good luck finding this; it's hard.</label>
+            <input type="text" id="job-offerings" name="job-offerings" placeholder="Good luck finding this; it's hard.">
+            <input type="hidden" name="correct-answer-3" value="0">
+            <br><br>
 
-      <p>Question 2: Give the number for the low temperature today</p>
-      <label for="low-temperature">Enter your number here (two digits, no letters allowed):</label>
-      <input type="text" id="low-temperature" name="low-temperature" pattern="\d{2}" title="Please enter a two-digit number." required>
-      <input type="hidden" name="correct-answer-2" value="32">
-      <br><br>
-
-      <p>Question 3: How many job offerings do we have?</p>
-      <label for="job-offerings">Good luck finding this; it's hard.</label>
-      <input type="text" id="job-offerings" name="job-offerings" placeholder="Good luck finding this; it's hard."> 
-      <input type="hidden" name="correct-answer-2" value="0">
-      <br><br>
-
-      <p>Question 4: Did you get your trash cans?</p>
-      <label for="trash-cans">think twice</label>
-      <input type="text" id="trash-cans" name="trash-cans" placeholder="think twice">
-      <input type="hidden" name="correct-answer-2" value="no">
-      <br><br>
-
-    </form>
-    <input type="submit" id="submit-button" value="Submit">
-    
-  </div>
-  </div>
-  <div class="modal" id="result-modal">
-
-    <div class="modal-content">
-      <div class="message" id="result-message"></div>
-      <button class="close-button">Close</button>
+            <p>Question 4: Did you get your trash cans?</p>
+            <label for="trash-cans">think twice</label>
+            <input type="text" id="trash-cans" name="trash-cans" placeholder="think twice">
+            <input type="hidden" name="correct-answer-4" value="no">
+            <br><br>
+            <input type="submit" id="submit-button" value="Submit">
+        </form>
     </div>
-  
-  </div>
-  <script>
-    document.getElementById('quiz-form').addEventListener('submit', function(e) {
+</div>
 
+<div class="modal" id="result-modal">
+    <div class="modal-content">
+        <div class="message" id="result-message"></div>
+        <button class="close-button">Close</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('quiz-form').addEventListener('submit', function (e) {
         e.preventDefault();
         const form = e.target;
         const answers = {
@@ -200,18 +175,19 @@
             }
         }
 
-        if(allCorrect) {
+        if (allCorrect) {
             document.getElementById('result-message').textContent = "Yay! You're now a Weather Buddy";
-          } else {
-            document.getElementById('result-message').textContent = "Try again";  
-          }
+            document.getElementById('result-modal').style.display = 'block';
+        } else {
+            document.getElementById('result-message').textContent = "Try again";
+            document.getElementById('result-modal').style.display = 'block';
+        }
     });
-    document.querySelector('.close-button').addEventListener('click', function() {
+
+    document.querySelector('.close-button').addEventListener('click', function () {
         document.getElementById('quiz-form').reset();
         document.getElementById('result-modal').style.display = 'none';
-      });
+    });
 </script>
-
-
 </body>
-</html>
+</
